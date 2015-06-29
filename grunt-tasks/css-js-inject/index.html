@@ -8,14 +8,31 @@
     <meta name="description" content="css & js inject demo">
     <meta name="author" content="">
 	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/winjs/css/ui-dark.css" />
 	<!-- endbower -->
   </head>
 
   <body>
+    <div ng-app="sample" ng-controller="sampleController">
+      <win-rating max-rating="maxRating" user-rating="rating"></win-rating>
+      <div>
+          <h2 class="win-h2">Rating: {{rating}}</h2>
+          <input class="win-slider" type="range" min="1" max="{{maxRating}}" ng-model="rating" />
+      </div>
+      <div>
+          <h2 class="win-h2">Maximum Rating: {{maxRating}}</h2>
+          <input class="win-slider" type="range" min="1" max="50" ng-model="maxRating" />
+      </div>
+    </div>   
 	<!-- bower:js -->
-	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/winjs/js/base.js"></script>
+	<script src="bower_components/winjs/js/ui.js"></script>
+	<script src="bower_components/angular-winjs/js/angular-winjs.js"></script>
 	<!-- endbower -->
+  
+  <!-- app:js -->
+  <script src="app.js"></script>
+  <!-- endapp -->
   </body>
 <html>

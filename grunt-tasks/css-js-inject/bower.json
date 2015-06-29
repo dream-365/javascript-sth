@@ -15,6 +15,7 @@
   ],
   "dependencies": {
     "angular": "~1.4.1",
-    "bootstrap": "~3.3.5"
+    "winjs": "~4.0.1",
+    "angular-winjs": "~3.0.0"
   }
 }
