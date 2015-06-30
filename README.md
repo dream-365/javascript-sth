@@ -1,2 +1,2 @@
-# jsplay
-Javascript playground
+# Javascript Playground
+Frontend and Backend
