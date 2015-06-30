@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="css & js inject demo">
-    <meta name="author" content="">
-	<!-- bower:css -->
-	<link rel="stylesheet" href="bower_components/winjs/css/ui-dark.css" />
-	<!-- endbower -->
-  </head>
-
-  <body>
-    <div ng-app="sample" ng-controller="sampleController">
-      <win-rating max-rating="maxRating" user-rating="rating"></win-rating>
-      <div>
-          <h2 class="win-h2">Rating: {{rating}}</h2>
-          <input class="win-slider" type="range" min="1" max="{{maxRating}}" ng-model="rating" />
-      </div>
-      <div>
-          <h2 class="win-h2">Maximum Rating: {{maxRating}}</h2>
-          <input class="win-slider" type="range" min="1" max="50" ng-model="maxRating" />
-      </div>
-    </div>   
-	<!-- bower:js -->
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/winjs/js/base.js"></script>
-	<script src="bower_components/winjs/js/ui.js"></script>
-	<script src="bower_components/angular-winjs/js/angular-winjs.js"></script>
-	<!-- endbower -->
-  
-  <!-- app:js -->
-  <script src="app.js"></script>
-  <!-- endapp -->
-  </body>
-<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="css & js inject demo">
+        <meta name="author" content="">
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/winjs/css/ui-dark.css" />
+        <!-- endbower -->
+        <!-- app:css -->
+        <link rel="stylesheet" href="styles/sample.css" />
+        <!-- endapp -->
+    </head>
+    
+    <body>
+        <div class="app" ng-app="sample" ng-controller="sampleController">
+            <button class="win-button" ng-click="toggleEditMode()">Toggle
+                <span>Mode:</span>
+                <span>{{mode.text}}</span>
+            </button>
+            <span ng-show="mode.text === 'edit'">
+                <button class="win-button" ng-click="addItem()">Add Item</button>
+                <button class="win-button" ng-click="removeItem()">Remove Item(s)</button>
+            </span>
+            <win-list-view class="listView win-selectionstylefilled" item-data-source="items" selection-mode="mode.selectionMode" tap-behavior="mode.tapBehavior"
+            header="select('.header')" selection="selection">
+                <win-item-template>
+                    <div class="smallListIconTextItem">
+                        <img src="{{item.data.picture}}" class="smallListIconTextItem-Image" />
+                        <div class="smallListIconTextItem-Detail">
+                            <h4 class="win-h4">{{item.data.title}}</h4>
+                            <h6 class="win-h6">{{item.data.text}}</h6>
+                        </div>
+                    </div>
+                </win-item-template>
+                <win-list-layout></win-list-layout>
+            </win-list-view>
+        </div>
+        <!-- bower:js -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/winjs/js/base.js"></script>
+        <script src="bower_components/winjs/js/ui.js"></script>
+        <script src="bower_components/angular-winjs/js/angular-winjs.js"></script>
+        <!-- endbower -->
+        <!-- app:js -->
+        <script src="app.js"></script>
+        <!-- endapp -->
+    </body>
+    <html>
