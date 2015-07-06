@@ -5,11 +5,6 @@ var app = express();
 
 app.use(express.static('client'));
 
-app.route('/*')
-    .get(function(req, res) {
-      res.sendFile('client/index.html');
-});
-
 var server = require('http').createServer(app);
 
 // Start server
