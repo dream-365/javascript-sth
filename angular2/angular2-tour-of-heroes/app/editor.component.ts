@@ -6,7 +6,7 @@ export class Hero {
 }
 
 @Component({
-    selector: 'my-app',
+    selector: 'hero-editor',
     template: `
     <h1>{{title}}</h1>
     <h2>{{hero.name}} details!</h2>
@@ -16,7 +16,7 @@ export class Hero {
       <input [(ngModel)]="hero.name" placeholder="name">
     `
 })
-export class AppComponent {
+export class HeroEditorComponent {
     title = 'Tour of Heroes';
     
     hero : Hero = {
