@@ -1,4 +1,4 @@
 import {bootstrap}      from '@angular/platform-browser-dynamic';
-import {HeroEditorComponent}   from './editor.component';
+import {HeroMasterDetailComponent}   from './master_detail.component';
 
-bootstrap(HeroEditorComponent);
+bootstrap(HeroMasterDetailComponent);
