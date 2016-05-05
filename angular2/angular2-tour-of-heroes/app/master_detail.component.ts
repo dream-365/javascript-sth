@@ -87,7 +87,5 @@ export class HeroMasterDetailComponent implements OnInit {
     
     onSelect(hero : Hero) { 
         this.selectedHero = hero; 
-        
-        console.log(hero);
     }
 }
